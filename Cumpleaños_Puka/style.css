@@ -1,0 +1,1824 @@
+/* ========================= */
+/* CONFIGURACIÓN GENERAL */
+/* ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+    text-align: center;
+
+    background:
+        radial-gradient(circle at top, rgba(147, 51, 234, 0.35), transparent 35%),
+        linear-gradient(135deg, #0f172a, #312e81, #111827);
+
+    color: white;
+
+    overflow-x: hidden;
+}
+
+
+/* ========================= */
+/* CONTENEDOR */
+/* ========================= */
+
+.contenedor {
+    width: 100%;
+    max-width: 900px;
+
+    padding: 30px;
+
+    position: relative;
+
+    z-index: 10;
+
+    animation: aparecer 1s ease;
+}
+
+
+/* ========================= */
+/* PORTADA */
+/* ========================= */
+
+.portada {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+}
+
+
+/* ETIQUETA */
+
+.etiqueta {
+    display: inline-block;
+
+    padding: 9px 18px;
+
+    margin-bottom: 15px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    backdrop-filter: blur(10px);
+
+    animation: etiquetaEntrada 1s ease;
+}
+
+
+/* EMOJI */
+
+.emoji-fiesta {
+    font-size: 75px;
+
+    margin-bottom: 5px;
+
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.3));
+
+    animation: emojiFlotar 2s ease-in-out infinite;
+}
+
+
+/* ========================= */
+/* TÍTULO */
+/* ========================= */
+
+h1 {
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 64px;
+
+    line-height: 1.05;
+
+    margin: 10px 0 20px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        3px 3px 0 rgba(0, 0, 0, 0.2),
+        0 8px 25px rgba(0, 0, 0, 0.35);
+
+    animation: tituloEntrada 1.2s ease;
+}
+
+
+h1 span {
+    background: linear-gradient(
+        90deg,
+        #facc15,
+        #ffffff,
+        #facc15
+    );
+
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    animation: brilloTexto 3s linear infinite;
+}
+
+
+/* ========================= */
+/* TEXTOS */
+/* ========================= */
+
+p {
+    font-size: 20px;
+
+    line-height: 1.5;
+
+    margin-bottom: 30px;
+}
+
+
+.mensaje-portada {
+    max-width: 600px;
+
+    margin: 0 auto 20px;
+
+    font-size: 21px;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    animation: aparecer 1.5s ease;
+}
+
+
+.texto-pequeno {
+    margin-top: 18px;
+
+    margin-bottom: 0;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+
+    animation: aparecer 2s ease;
+}
+
+
+/* ========================= */
+/* SEPARADOR */
+/* ========================= */
+
+.separador {
+    margin: 5px 0 25px;
+
+    font-size: 18px;
+
+    letter-spacing: 10px;
+
+    opacity: 0.8;
+
+    animation: brilloSeparador 2s ease-in-out infinite alternate;
+}
+
+
+/* ========================= */
+/* BOTONES */
+/* ========================= */
+
+button {
+    padding: 15px 30px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    font-family: Arial, sans-serif;
+
+    cursor: pointer;
+
+    background: white;
+
+    color: #312e81;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.3);
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+button:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+
+button:active {
+    transform: scale(0.96);
+}
+
+
+/* BOTÓN PRINCIPAL */
+
+.boton-sorpresa {
+    padding: 17px 35px;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #f3f4f6
+    );
+
+    color: #312e81;
+
+    font-size: 19px;
+
+    animation: botonFlotar 2s ease-in-out infinite;
+}
+
+
+.boton-sorpresa:hover {
+    animation-play-state: paused;
+
+    box-shadow:
+        0 0 25px rgba(255, 255, 255, 0.5),
+        0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ========================= */
+/* ANIMACIONES */
+/* ========================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+
+}
+
+
+@keyframes tituloEntrada {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+@keyframes etiquetaEntrada {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes emojiFlotar {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(3deg);
+    }
+
+}
+
+
+@keyframes botonFlotar {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+}
+
+
+@keyframes brilloTexto {
+
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: 200% center;
+    }
+
+}
+
+
+@keyframes brilloSeparador {
+
+    from {
+        opacity: 0.35;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* ========================= */
+/* GLOBOS */
+/* ========================= */
+
+.globo {
+    position: absolute;
+
+    width: 55px;
+    height: 70px;
+
+    border-radius: 50%;
+
+    bottom: -100px;
+
+    box-shadow:
+        inset -8px -10px 15px rgba(0, 0, 0, 0.25),
+        inset 8px 8px 12px rgba(255, 255, 255, 0.25),
+        0 8px 15px rgba(0, 0, 0, 0.25);
+
+    animation: flotar 9s linear infinite;
+
+    z-index: 2;
+
+    clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% 75%,
+        60% 92%,
+        50% 100%,
+        40% 92%,
+        0% 75%
+    );
+}
+
+
+/* COLORES */
+
+.globo-rojo {
+    background: #e63946;
+
+    left: 8%;
+}
+
+
+.globo-azul {
+    background: #2563eb;
+
+    left: 28%;
+
+    animation-delay: 2s;
+}
+
+
+.globo-morado {
+    background: #9333ea;
+
+    left: 50%;
+
+    animation-delay: 4s;
+}
+
+
+.globo-negro {
+    background: #111111;
+
+    left: 75%;
+
+    animation-delay: 1s;
+}
+
+
+/* TAMAÑOS */
+
+.grande {
+    width: 80px;
+    height: 100px;
+
+    left: 88%;
+
+    animation-delay: 3s;
+}
+
+
+.pequeno {
+    width: 35px;
+    height: 45px;
+
+    left: 35%;
+
+    animation-delay: 5s;
+}
+
+
+/* BRILLO */
+
+.globo::before {
+    content: "";
+
+    position: absolute;
+
+    width: 12px;
+    height: 20px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    top: 12px;
+    left: 12px;
+
+    opacity: 0.7;
+}
+
+
+/* CUERDA */
+
+.globo::after {
+    content: "";
+
+    position: absolute;
+
+    width: 2px;
+    height: 70px;
+
+    background: white;
+
+    top: 68px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    opacity: 0.7;
+}
+
+
+/* MOVIMIENTO */
+
+@keyframes flotar {
+
+    from {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(-120vh) rotate(15deg);
+    }
+
+}
+
+
+/* ========================= */
+/* ESTRELLAS */
+/* ========================= */
+
+body::before,
+body::after {
+    content: "✦   ✧   ✦   ✧   ✦   ✧   ✦";
+
+    position: fixed;
+
+    width: 100%;
+
+    left: 0;
+
+    font-size: 25px;
+
+    letter-spacing: 25px;
+
+    opacity: 0.35;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    animation: estrellas 4s ease-in-out infinite alternate;
+}
+
+
+body::before {
+    top: 12%;
+}
+
+
+body::after {
+    bottom: 12%;
+
+    animation-delay: 2s;
+}
+
+
+@keyframes estrellas {
+
+    from {
+        opacity: 0.15;
+
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0.5;
+
+        transform: translateY(10px);
+    }
+
+}
+
+
+/* ========================= */
+/* CORAZONES DECORATIVOS */
+/* ========================= */
+
+.corazon {
+    position: fixed;
+
+    top: 25%;
+
+    left: 7%;
+
+    font-size: 25px;
+
+    color: #e63946;
+
+    opacity: 0.7;
+
+    animation: corazonFlotar 3s ease-in-out infinite;
+}
+
+
+.azul-corazon {
+    top: 65%;
+
+    left: auto;
+
+    right: 8%;
+
+    color: #2563eb;
+
+    animation-delay: 1s;
+}
+
+
+.morado-corazon {
+    top: 40%;
+
+    left: auto;
+
+    right: 15%;
+
+    color: #9333ea;
+
+    animation-delay: 2s;
+}
+
+
+@keyframes corazonFlotar {
+
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-12px) scale(1.15);
+    }
+
+}
+
+
+/* ========================= */
+/* CARTA */
+/* ========================= */
+
+.carta {
+    max-width: 500px;
+
+    margin: 30px auto 0;
+
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.3);
+
+    backdrop-filter: blur(10px);
+
+    animation: aparecerCarta 1s ease;
+}
+
+
+.carta h2 {
+    font-size: 30px;
+
+    margin-top: 0;
+}
+
+
+.carta p {
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+
+@keyframes aparecerCarta {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ========================= */
+/* GALERÍA */
+/* ========================= */
+
+.galeria {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin: 25px 0;
+}
+
+
+.galeria img {
+    width: 130px;
+    height: 130px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    border: 3px solid white;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.3);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.galeria img:hover {
+    transform: scale(1.08) rotate(2deg);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.45);
+}
+
+
+/* ========================= */
+/* VISOR DE FOTOS */
+/* ========================= */
+
+.visor {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.92);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2000;
+
+    animation: aparecer 0.3s ease;
+}
+
+
+.visor img {
+    max-width: 90%;
+    max-height: 85%;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+
+.cerrar {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #111827;
+
+    font-size: 24px;
+
+    z-index: 2001;
+}
+
+
+/* ========================= */
+/* CONFETI */
+/* ========================= */
+
+.confeti {
+    position: fixed;
+
+    top: -20px;
+
+    width: 10px;
+    height: 18px;
+
+    border-radius: 2px;
+
+    animation: caer 3s linear forwards;
+
+    z-index: 1500;
+
+    pointer-events: none;
+}
+
+
+@keyframes caer {
+
+    from {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+    }
+
+}
+
+
+/* ========================= */
+/* BOTÓN MÚSICA */
+/* ========================= */
+
+.boton-musica {
+    margin-bottom: 20px;
+
+    background: #9333ea;
+
+    color: white;
+
+    font-size: 16px;
+}
+
+
+.boton-musica:hover {
+    transform: scale(1.05);
+}
+
+
+/* ========================= */
+/* RECUERDOS */
+/* ========================= */
+
+.recuerdos {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    margin-top: 30px;
+}
+
+
+.recuerdos img {
+    width: 180px;
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    border: 4px solid white;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.recuerdos img:hover {
+    transform:
+        translateY(-10px)
+        rotate(2deg)
+        scale(1.05);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.45);
+}
+
+
+/* ========================= */
+/* BOTÓN CONTINUAR */
+/* ========================= */
+
+.boton-continuar {
+    margin-top: 20px;
+
+    background: #e63946;
+
+    color: white;
+}
+
+
+/* ========================= */
+/* PANTALLA FINAL */
+/* ========================= */
+
+.final {
+    max-width: 600px;
+
+    margin: auto;
+
+    animation: finalAparecer 1.5s ease;
+}
+
+
+.final h1 {
+    font-size: 42px;
+}
+
+
+.final h2 {
+    font-size: 28px;
+
+    margin-top: 30px;
+}
+
+
+.final p {
+    font-size: 19px;
+
+    line-height: 1.7;
+}
+
+
+.firma {
+    margin-top: 30px;
+
+    font-style: italic;
+
+    opacity: 0.8;
+}
+
+
+/* CORAZÓN GRANDE */
+
+.corazon-grande {
+    font-size: 80px;
+
+    animation: latir 1s ease-in-out infinite;
+
+    filter:
+        drop-shadow(0 8px 15px rgba(0, 0, 0, 0.35));
+}
+
+
+@keyframes finalAparecer {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes latir {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+}
+
+
+/* ========================= */
+/* BOTÓN FINAL */
+/* ========================= */
+
+.boton-final {
+    margin-top: 30px;
+
+    background: #e63946;
+
+    color: white;
+}
+
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+
+@media (max-width: 600px) {
+
+    .contenedor {
+        padding: 20px;
+    }
+
+
+    .portada {
+        padding: 25px 15px;
+    }
+
+
+    .etiqueta {
+        font-size: 11px;
+
+        padding: 8px 13px;
+    }
+
+
+    .emoji-fiesta {
+        font-size: 60px;
+    }
+
+
+    h1 {
+        font-size: 42px;
+
+        line-height: 1.08;
+    }
+
+
+    .mensaje-portada {
+        font-size: 17px;
+
+        max-width: 330px;
+    }
+
+
+    .separador {
+        font-size: 15px;
+
+        letter-spacing: 6px;
+    }
+
+
+    .boton-sorpresa {
+        font-size: 17px;
+
+        padding: 15px 28px;
+    }
+
+
+    .carta {
+        padding: 20px;
+
+        margin: 20px 5px 0;
+    }
+
+
+    .carta h2 {
+        font-size: 25px;
+    }
+
+
+    .carta p {
+        font-size: 16px;
+    }
+
+
+    .galeria img {
+        width: 100px;
+        height: 100px;
+    }
+
+
+    .recuerdos {
+        gap: 12px;
+    }
+
+
+    .recuerdos img {
+        width: 130px;
+        height: 130px;
+    }
+
+
+    .final h1 {
+        font-size: 34px;
+    }
+
+
+    .final h2 {
+        font-size: 24px;
+    }
+
+
+    .final p {
+        font-size: 17px;
+    }
+
+
+    .corazon {
+        font-size: 18px;
+    }
+
+}
+
+
+/* ========================= */
+/* PANTALLAS MUY PEQUEÑAS */
+/* ========================= */
+
+@media (max-width: 380px) {
+
+    h1 {
+        font-size: 36px;
+    }
+
+
+    .emoji-fiesta {
+        font-size: 50px;
+    }
+
+
+    .mensaje-portada {
+        font-size: 16px;
+    }
+
+
+    .boton-sorpresa {
+        font-size: 16px;
+
+        padding: 14px 24px;
+    }
+
+}
+
+/* ========================= */
+/* APERTURA CINEMATOGRÁFICA */
+/* ========================= */
+
+.apertura {
+    min-height: 60vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    animation: aparecer 0.8s ease;
+}
+
+
+.regalo-grande {
+    font-size: 130px;
+
+    filter:
+        drop-shadow(
+            0 15px 20px
+            rgba(0, 0, 0, 0.4)
+        );
+
+    animation:
+        regaloFlotar 1.2s
+        ease-in-out infinite;
+}
+
+
+.texto-apertura {
+    font-size: 35px;
+
+    margin-top: 20px;
+
+    animation:
+        textoParpadeo 1s
+        ease-in-out infinite alternate;
+}
+
+
+/* BARRA DE CARGA */
+
+.cargando {
+    width: 280px;
+
+    height: 12px;
+
+    margin-top: 25px;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0, 0, 0, 0.25);
+}
+
+
+.barra-cargando {
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #e63946,
+            #9333ea,
+            #2563eb
+        );
+
+    animation:
+        cargar 2.3s
+        ease-in-out forwards;
+}
+
+
+/* ========================= */
+/* REGALO ABIERTO */
+/* ========================= */
+
+.apertura-final {
+    min-height: 60vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    animation:
+        sorpresaEntrada 1s ease;
+}
+
+
+.regalo-abierto {
+    font-size: 150px;
+
+    animation:
+        regaloAbrir 1s ease;
+}
+
+
+.apertura-final h1 {
+    font-size: 55px;
+
+    margin-top: 15px;
+
+    animation:
+        textoSorpresa 1s ease;
+}
+
+
+/* ========================= */
+/* ANIMACIONES */
+/* ========================= */
+
+@keyframes regaloFlotar {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(-3deg);
+    }
+
+    50% {
+        transform:
+            translateY(-15px)
+            rotate(3deg);
+    }
+
+}
+
+
+@keyframes textoParpadeo {
+
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes cargar {
+
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+
+}
+
+
+@keyframes regaloAbrir {
+
+    0% {
+        transform:
+            scale(0.2)
+            rotate(-15deg);
+
+        opacity: 0;
+    }
+
+    60% {
+        transform:
+            scale(1.25)
+            rotate(8deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            scale(1)
+            rotate(0);
+    }
+
+}
+
+
+@keyframes sorpresaEntrada {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+
+}
+
+
+@keyframes textoSorpresa {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+
+@media (max-width: 600px) {
+
+    .regalo-grande {
+        font-size: 95px;
+    }
+
+
+    .texto-apertura {
+        font-size: 27px;
+    }
+
+
+    .cargando {
+        width: 230px;
+    }
+
+
+    .regalo-abierto {
+        font-size: 110px;
+    }
+
+
+    .apertura-final h1 {
+        font-size: 38px;
+    }
+
+}
+
+/* ========================= */
+/* NIVEL 18 */
+/* ========================= */
+
+.nivel18 {
+    max-width: 650px;
+
+    margin: auto;
+
+    padding: 35px;
+
+    border: 2px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 25px;
+
+    background:
+        rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.4);
+
+    animation:
+        nivelEntrada 1s ease;
+}
+
+
+.icono-nivel {
+    font-size: 70px;
+
+    animation:
+        iconoJuego 1.5s ease-in-out infinite;
+}
+
+
+.texto-desbloqueado {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    background: rgba(250, 204, 21, 0.15);
+
+    border: 1px solid rgba(250, 204, 21, 0.5);
+
+    color: #facc15;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.nivel18 h1 {
+    font-size: 70px;
+
+    margin: 15px 0;
+
+    color: #facc15;
+
+    text-shadow:
+        0 0 10px rgba(250, 204, 21, 0.5),
+        0 0 30px rgba(250, 204, 21, 0.3);
+}
+
+
+.nivel18 h2 {
+    font-size: 27px;
+}
+
+
+.linea-nivel {
+    width: 80%;
+
+    height: 3px;
+
+    margin: 15px auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #facc15,
+            transparent
+        );
+}
+
+
+.estadisticas {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin: 30px 0;
+
+    flex-wrap: wrap;
+}
+
+
+.estadistica {
+    width: 150px;
+
+    padding: 18px 10px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+.estadistica span {
+    font-size: 28px;
+}
+
+
+.estadistica strong {
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 28px;
+
+    color: #facc15;
+}
+
+
+.estadistica small {
+    font-size: 10px;
+
+    opacity: 0.65;
+
+    letter-spacing: 1px;
+}
+
+
+.mensaje-nivel {
+    font-size: 18px;
+
+    opacity: 0.85;
+}
+
+
+.boton-desbloquear {
+    margin-top: 10px;
+
+    background: #facc15;
+
+    color: #111827;
+
+    box-shadow:
+        0 0 20px rgba(250, 204, 21, 0.25);
+}
+
+
+/* ========================= */
+/* ANIMACIONES NIVEL */
+/* ========================= */
+
+@keyframes nivelEntrada {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.7)
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+
+}
+
+
+@keyframes iconoJuego {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(5deg);
+    }
+
+}
+
+
+/* ========================= */
+/* MENSAJE SECRETO */
+/* ========================= */
+
+.secreto {
+    max-width: 600px;
+
+    margin: auto;
+
+    animation:
+        secretoEntrada 1s ease;
+}
+
+
+.candado {
+    font-size: 75px;
+
+    animation:
+        candado 1.5s ease-in-out infinite;
+}
+
+
+.secreto h1 {
+    font-size: 55px;
+}
+
+
+.carta-secreta {
+    margin: 30px auto;
+
+    padding: 30px;
+
+    max-width: 500px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.3);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.carta-secreta > span {
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 20px;
+
+    color: #facc15;
+}
+
+
+.carta-secreta p {
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+
+@keyframes secretoEntrada {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+@keyframes candado {
+
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+}
+
+
+/* ========================= */
+/* BOTÓN RECUERDOS */
+/* ========================= */
+
+.boton-nivel {
+    margin-top: 30px;
+
+    background: #facc15;
+
+    color: #111827;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+
+@media (max-width: 600px) {
+
+    .nivel18 {
+        padding: 25px 15px;
+
+        margin: 10px;
+    }
+
+
+    .icono-nivel {
+        font-size: 55px;
+    }
+
+
+    .nivel18 h1 {
+        font-size: 48px;
+    }
+
+
+    .nivel18 h2 {
+        font-size: 22px;
+    }
+
+
+    .estadistica {
+        width: 125px;
+    }
+
+
+    .secreto h1 {
+        font-size: 42px;
+    }
+
+
+    .carta-secreta {
+        padding: 22px;
+    }
+
+
+    .carta-secreta p {
+        font-size: 16px;
+    }
+
+
+    .candado {
+        font-size: 60px;
+    }
+
+}
