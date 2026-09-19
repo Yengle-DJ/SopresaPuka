@@ -1,0 +1,775 @@
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #08090d;
+    color: #f1f1f1;
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   FONDO
+===================================================== */
+
+.luz {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(130px);
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: -3;
+}
+
+.luz-1 {
+    background: #7a0d27;
+    top: -200px;
+    left: -200px;
+}
+
+.luz-2 {
+    background: #152d72;
+    right: -200px;
+    bottom: -200px;
+}
+
+.grano {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    z-index: 100;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E");
+}
+
+
+/* =====================================================
+   ENCABEZADO
+===================================================== */
+
+.encabezado {
+    position: absolute;
+    top: 30px;
+    left: 5%;
+    right: 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 20;
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+}
+
+.numero {
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    opacity: 0.6;
+}
+
+
+/* =====================================================
+   ELEMENTOS GENERALES
+===================================================== */
+
+.etiqueta {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #999;
+    margin-bottom: 30px;
+}
+
+.linea {
+    width: 50px;
+    height: 1px;
+    background: #8f233f;
+    margin-bottom: 30px;
+}
+
+
+/* =====================================================
+   PORTADA
+===================================================== */
+
+.inicio {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+}
+
+.inicio-contenido {
+    max-width: 700px;
+}
+
+.mini-titulo {
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: #8d8d8d;
+    margin-bottom: 35px;
+}
+
+.inicio h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(70px, 14vw, 160px);
+    line-height: 0.8;
+    font-weight: 500;
+}
+
+.inicio h1 span {
+    font-style: italic;
+    color: #8e2946;
+}
+
+.frase {
+    max-width: 430px;
+    margin: 45px auto 35px;
+
+    color: #a8a8a8;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.edad {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px;
+
+    margin-bottom: 60px;
+}
+
+.edad span {
+    font-family: "Playfair Display", serif;
+    font-size: 42px;
+}
+
+.edad small {
+    color: #888;
+    letter-spacing: 3px;
+}
+
+.flecha {
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+
+    background: transparent;
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.flecha:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateY(5px);
+}
+
+
+/* =====================================================
+   INTRODUCCIÓN
+===================================================== */
+
+.introduccion {
+    max-width: 850px;
+    margin: auto;
+
+    padding: 180px 30px;
+}
+
+.introduccion h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(40px, 6vw, 75px);
+    font-weight: 500;
+    line-height: 1.05;
+
+    margin-bottom: 45px;
+}
+
+.introduccion h2 i {
+    color: #888;
+}
+
+.texto-intro {
+    max-width: 500px;
+
+    font-size: 15px;
+    line-height: 2;
+
+    color: #999;
+}
+
+
+/* =====================================================
+   RECUERDOS
+===================================================== */
+
+.recuerdos {
+    padding: 130px 6%;
+}
+
+.titulo-seccion {
+    max-width: 800px;
+    margin: 0 auto 80px;
+}
+
+.titulo-seccion h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(40px, 6vw, 75px);
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+
+/* =====================================================
+   GALERÍA
+===================================================== */
+
+.galeria {
+    max-width: 1100px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 130px;
+}
+
+
+/* =====================================================
+   FOTOS
+===================================================== */
+
+.foto {
+    position: relative;
+}
+
+.foto-contenedor {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    overflow: visible;
+}
+
+.foto img:not(.hotwheel) {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    background: #08090d;
+
+    cursor: zoom-in;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+
+/*
+   IMPORTANTE:
+   Las imágenes ahora mantienen
+   completamente su proporción.
+   No se recortan.
+*/
+
+.foto-grande img:not(.hotwheel) {
+    max-width: 100%;
+}
+
+.foto-pequena {
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.foto-ancha {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.foto img:not(.hotwheel):hover {
+    transform: scale(1.01);
+    filter: brightness(1.08);
+}
+
+
+/* =====================================================
+   INFORMACIÓN DE LAS FOTOS
+===================================================== */
+
+.foto-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+
+    margin-top: 25px;
+}
+
+.foto-info span {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #777;
+
+    min-width: 100px;
+}
+
+.foto-info p {
+    color: #999;
+    font-size: 13px;
+    line-height: 1.7;
+    max-width: 400px;
+}
+
+
+/* =====================================================
+   HOT WHEELS
+===================================================== */
+
+.hotwheel {
+    position: absolute;
+
+    width: 90px;
+    height: auto !important;
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    filter:
+        drop-shadow(0 12px 10px rgba(0,0,0,0.7));
+
+    animation: carritoFlotando 4s ease-in-out infinite;
+}
+
+
+/* CARRO 1 */
+
+.hotwheel-1 {
+    right: -35px;
+    top: 8%;
+
+    transform: rotate(8deg);
+}
+
+
+/* CARRO 2 */
+
+.hotwheel-2 {
+    left: -35px;
+    bottom: 8%;
+
+    width: 80px;
+
+    transform: rotate(-10deg);
+
+    animation-delay: 1s;
+}
+
+
+/* CARRO 3 */
+
+.hotwheel-3 {
+    right: -30px;
+    bottom: 5%;
+
+    width: 85px;
+
+    transform: rotate(6deg);
+
+    animation-delay: 2s;
+}
+
+
+@keyframes carritoFlotando {
+
+    0%,
+    100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -8px;
+    }
+
+}
+
+
+/* =====================================================
+   FRAGMENTOS
+===================================================== */
+
+.fragmentos {
+    padding: 180px 6%;
+}
+
+.lista-recuerdos {
+    max-width: 850px;
+    margin: auto;
+
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.recuerdo {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+
+    gap: 30px;
+
+    padding: 35px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.recuerdo span {
+    color: #8e2946;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.recuerdo p {
+    color: #aaa;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   CARTA
+===================================================== */
+
+.carta-seccion {
+    padding: 150px 20px;
+}
+
+.carta {
+    max-width: 760px;
+    margin: auto;
+
+    padding: 70px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.025),
+            rgba(255,255,255,0.005)
+        );
+}
+
+.carta h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 55px;
+    font-weight: 500;
+
+    margin-bottom: 50px;
+}
+
+.texto-carta p {
+    color: #aaa;
+
+    font-size: 15px;
+    line-height: 2;
+
+    margin-bottom: 25px;
+}
+
+.firma {
+    margin-top: 70px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.firma span {
+    color: #777;
+    font-size: 12px;
+}
+
+.firma strong {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    font-style: italic;
+
+    color: #8e2946;
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.final {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+}
+
+.final-contenido {
+    max-width: 700px;
+}
+
+.final h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(50px, 8vw, 100px);
+
+    font-weight: 500;
+
+    margin-bottom: 35px;
+}
+
+.final-contenido > p {
+    color: #999;
+    line-height: 1.8;
+}
+
+.final-linea {
+    width: 80px;
+    height: 1px;
+
+    background: #8e2946;
+
+    margin: 55px auto;
+}
+
+.final h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 27px;
+    line-height: 1.5;
+
+    font-weight: 500;
+}
+
+.ultimo {
+    margin-top: 30px;
+}
+
+
+/* =====================================================
+   VISOR
+===================================================== */
+
+.visor {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.94);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    z-index: 1000;
+}
+
+.visor.activo {
+    display: flex;
+}
+
+.visor img {
+    max-width: 92vw;
+    max-height: 90vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+}
+
+.cerrar-visor {
+    position: absolute;
+
+    top: 25px;
+    right: 35px;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+
+    font-size: 42px;
+
+    cursor: pointer;
+
+    opacity: 0.7;
+
+    transition: 0.3s;
+}
+
+.cerrar-visor:hover {
+    opacity: 1;
+}
+
+
+/* =====================================================
+   RESPONSIVE — CELULAR
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .encabezado {
+        top: 20px;
+        left: 6%;
+        right: 6%;
+    }
+
+    .inicio {
+        padding: 100px 25px;
+    }
+
+    .inicio h1 {
+        font-size: 75px;
+    }
+
+    .introduccion {
+        padding: 130px 25px;
+    }
+
+    .recuerdos {
+        padding: 100px 20px;
+    }
+
+    .fragmentos {
+        padding: 120px 20px;
+    }
+
+    .galeria {
+        gap: 90px;
+    }
+
+    .foto-info {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .foto-info span {
+        min-width: auto;
+    }
+
+    .hotwheel {
+        width: 65px;
+    }
+
+    .hotwheel-1 {
+        right: -10px;
+    }
+
+    .hotwheel-2 {
+        left: -10px;
+    }
+
+    .hotwheel-3 {
+        right: -10px;
+    }
+
+    .carta-seccion {
+        padding: 100px 18px;
+    }
+
+    .carta {
+        padding: 35px 25px;
+    }
+
+    .carta h2 {
+        font-size: 45px;
+    }
+
+    .texto-carta p {
+        font-size: 14px;
+    }
+
+    .recuerdo {
+        grid-template-columns: 40px 1fr;
+        gap: 15px;
+    }
+
+    .final h3 {
+        font-size: 22px;
+    }
+
+}
+
+
+/* =====================================================
+   CELULARES MUY PEQUEÑOS
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .inicio h1 {
+        font-size: 65px;
+    }
+
+    .inicio-contenido {
+        width: 100%;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 40px;
+    }
+
+    .introduccion h2 {
+        font-size: 40px;
+    }
+
+}
+
