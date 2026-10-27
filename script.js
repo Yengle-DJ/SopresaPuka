@@ -1,190 +1,143 @@
-/* =====================================================
+
+/* ========================================
    IR A LOS RECUERDOS
-===================================================== */
-
+======================================== */
 function irARecuerdos() {
+    const recuerdos = document.getElementById("recuerdos");
 
-    const recuerdos =
-        document.getElementById("recuerdos");
-
-    recuerdos.scrollIntoView({
-        behavior: "smooth"
-    });
-
+    if (recuerdos) {
+        recuerdos.scrollIntoView({ behavior: "smooth" });
+    }
 }
 
-
-/* =====================================================
-   VISOR DE FOTOS
-===================================================== */
-
+/* ========================================
+   ABRIR EL VISOR DE FOTOS
+======================================== */
 function abrirVisor(imagen) {
+    const visor = document.getElementById("visor");
+    const imagenVisor = document.getElementById("imagen-visor");
 
-    const visor =
-        document.getElementById("visor");
-
-    const imagenVisor =
-        document.getElementById("imagen-visor");
+    if (!visor || !imagenVisor || !imagen) return;
 
     imagenVisor.src = imagen.src;
-
     visor.classList.add("activo");
-
     document.body.style.overflow = "hidden";
-
 }
 
-
+/* ========================================
+   CERRAR EL VISOR
+======================================== */
 function cerrarVisor() {
+    const visor = document.getElementById("visor");
 
-    const visor =
-        document.getElementById("visor");
+    if (!visor) return;
 
     visor.classList.remove("activo");
-
     document.body.style.overflow = "";
-
 }
 
+/* Cerrar la foto con Escape */
+document.addEventListener("keydown", function (evento) {
+    if (evento.key === "Escape") {
+        cerrarVisor();
+    }
+});
 
-/* =====================================================
-   CERRAR CON ESC
-===================================================== */
+/* Cerrar al pulsar fuera de la foto */
+const visorFotos = document.getElementById("visor");
 
-document.addEventListener(
-    "keydown",
-    function (evento) {
-
-        if (evento.key === "Escape") {
-
+if (visorFotos) {
+    visorFotos.addEventListener("click", function (evento) {
+        if (evento.target === this) {
             cerrarVisor();
-
         }
+    });
+}
 
-    }
+/* ========================================
+   ANIMACIÓN AL DESPLAZARSE
+======================================== */
+const elementos = document.querySelectorAll(
+    ".introduccion, .recuerdos, .fragmentos, .carta-seccion, .final, .video-sorpresa"
 );
 
-
-/* =====================================================
-   CERRAR HACIENDO CLICK FUERA DE LA FOTO
-===================================================== */
-
-document
-    .getElementById("visor")
-    .addEventListener(
-        "click",
-        function (evento) {
-
-            if (evento.target === this) {
-
-                cerrarVisor();
-
+if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(function (entradas) {
+        entradas.forEach(function (entrada) {
+            if (entrada.isIntersecting) {
+                entrada.target.classList.add("visible");
             }
+        });
+    }, {
+        threshold: 0.15
+    });
 
-        }
-    );
-
-
-/* =====================================================
-   ANIMACIÓN AL HACER SCROLL
-===================================================== */
-
-const elementos =
-    document.querySelectorAll(
-        ".introduccion, .recuerdos, .fragmentos, .carta-seccion, .final"
-    );
-
-
-const observer =
-    new IntersectionObserver(
-
-        function (entradas) {
-
-            entradas.forEach(
-                function (entrada) {
-
-                    if (entrada.isIntersecting) {
-
-                        entrada.target.classList.add(
-                            "visible"
-                        );
-
-                    }
-
-                }
-            );
-
-        },
-
-        {
-            threshold: 0.15
-        }
-
-    );
-
-
-elementos.forEach(
-    function (elemento) {
-
+    elementos.forEach(function (elemento) {
         observer.observe(elemento);
+    });
+} else {
+    elementos.forEach(function (elemento) {
+        elemento.classList.add("visible");
+    });
+}
 
-    }
-);
-
-
-/* =====================================================
+/* ========================================
    MOVIMIENTO SUAVE DE LAS FOTOS
-===================================================== */
+======================================== */
+const fotos = document.querySelectorAll(".foto img:not(.hotwheel)");
 
-const fotos =
-    document.querySelectorAll(
-        ".foto img:not(.hotwheel)"
-    );
+fotos.forEach(function (foto) {
+    foto.addEventListener("mousemove", function (evento) {
+        const rect = foto.getBoundingClientRect();
 
+        const x = evento.clientX - rect.left;
+        const y = evento.clientY - rect.top;
 
-fotos.forEach(
-    function (foto) {
+        const centroX = rect.width / 2;
+        const centroY = rect.height / 2;
 
-        foto.addEventListener(
-            "mousemove",
-            function (evento) {
+        const movimientoX = (x - centroX) / 60;
+        const movimientoY = (y - centroY) / 60;
 
-                const rect =
-                    foto.getBoundingClientRect();
+        foto.style.transform =
+            `translate(${movimientoX}px, ${movimientoY}px)`;
+    });
 
-                const x =
-                    evento.clientX - rect.left;
+    foto.addEventListener("mouseleave", function () {
+        foto.style.transform = "";
+    });
+});
 
-                const y =
-                    evento.clientY - rect.top;
+/* ========================================
+   BOTÓN SORPRESA: MOSTRAR EL VIDEO
+======================================== */
+const botonSorpresa = document.getElementById("botonSorpresa");
+const zonaVideo = document.getElementById("zonaVideo");
+const videoSorpresa = document.getElementById("videoSorpresa");
 
-                const centroX =
-                    rect.width / 2;
+if (botonSorpresa && zonaVideo) {
+    botonSorpresa.addEventListener("click", function () {
+        const mostrarVideo = zonaVideo.hidden;
 
-                const centroY =
-                    rect.height / 2;
+        zonaVideo.hidden = !mostrarVideo;
 
-                const movimientoX =
-                    (x - centroX) / 60;
-
-                const movimientoY =
-                    (y - centroY) / 60;
-
-                foto.style.transform =
-                    `translate(${movimientoX}px, ${movimientoY}px)`;
-
-            }
+        botonSorpresa.setAttribute(
+            "aria-expanded",
+            String(mostrarVideo)
         );
 
+        botonSorpresa.innerHTML = mostrarVideo
+            ? '<span class="icono-sorpresa" aria-hidden="true">♡</span> Cerrar sorpresa'
+            : '<span class="icono-sorpresa" aria-hidden="true">▶</span> Abrir sorpresa';
 
-        foto.addEventListener(
-            "mouseleave",
-            function () {
-
-                foto.style.transform = "";
-
-            }
-        );
-
-    }
-);
+        if (mostrarVideo) {
+            zonaVideo.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        } else if (videoSorpresa) {
+            videoSorpresa.pause();
+            videoSorpresa.currentTime = 0;
+        }
+    });
+}

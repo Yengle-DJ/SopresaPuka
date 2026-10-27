@@ -1,7 +1,7 @@
-/* =====================================================
-   CONFIGURACIÓN GENERAL
-===================================================== */
 
+/* ========================================
+   CONFIGURACIÓN GENERAL
+======================================== */
 * {
     margin: 0;
     padding: 0;
@@ -19,18 +19,20 @@ body {
     overflow-x: hidden;
 }
 
+button {
+    font-family: inherit;
+}
 
-/* =====================================================
+/* ========================================
    FONDO
-===================================================== */
-
+======================================== */
 .luz {
     position: fixed;
     width: 500px;
     height: 500px;
     border-radius: 50%;
     filter: blur(130px);
-    opacity: 0.12;
+    opacity: .12;
     pointer-events: none;
     z-index: -3;
 }
@@ -51,40 +53,33 @@ body {
     position: fixed;
     inset: 0;
     pointer-events: none;
-    opacity: 0.035;
+    opacity: .035;
     z-index: 100;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E");
 }
 
-
-/* =====================================================
+/* ========================================
    ENCABEZADO
-===================================================== */
-
+======================================== */
 .encabezado {
     position: absolute;
     top: 30px;
     left: 5%;
     right: 5%;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     z-index: 20;
 }
 
 .logo {
     width: 42px;
     height: 42px;
-
-    border: 1px solid rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,.25);
     border-radius: 50%;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-family: "Playfair Display", serif;
     font-size: 20px;
 }
@@ -92,14 +87,12 @@ body {
 .numero {
     font-family: "Playfair Display", serif;
     font-size: 18px;
-    opacity: 0.6;
+    opacity: .6;
 }
 
-
-/* =====================================================
+/* ========================================
    ELEMENTOS GENERALES
-===================================================== */
-
+======================================== */
 .etiqueta {
     font-size: 10px;
     letter-spacing: 4px;
@@ -114,20 +107,15 @@ body {
     margin-bottom: 30px;
 }
 
-
-/* =====================================================
+/* ========================================
    PORTADA
-===================================================== */
-
+======================================== */
 .inicio {
     min-height: 100vh;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-align: center;
-
     padding: 100px 20px;
 }
 
@@ -145,7 +133,7 @@ body {
 .inicio h1 {
     font-family: "Playfair Display", serif;
     font-size: clamp(70px, 14vw, 160px);
-    line-height: 0.8;
+    line-height: .8;
     font-weight: 500;
 }
 
@@ -157,7 +145,6 @@ body {
 .frase {
     max-width: 430px;
     margin: 45px auto 35px;
-
     color: #a8a8a8;
     font-size: 14px;
     line-height: 1.8;
@@ -168,7 +155,6 @@ body {
     align-items: baseline;
     justify-content: center;
     gap: 10px;
-
     margin-bottom: 60px;
 }
 
@@ -185,34 +171,26 @@ body {
 .flecha {
     width: 48px;
     height: 48px;
-
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,.2);
     border-radius: 50%;
-
     background: transparent;
     color: white;
-
     font-size: 20px;
-
     cursor: pointer;
-
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .flecha:hover {
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,.08);
     transform: translateY(5px);
 }
 
-
-/* =====================================================
+/* ========================================
    INTRODUCCIÓN
-===================================================== */
-
+======================================== */
 .introduccion {
     max-width: 850px;
     margin: auto;
-
     padding: 180px 30px;
 }
 
@@ -221,7 +199,6 @@ body {
     font-size: clamp(40px, 6vw, 75px);
     font-weight: 500;
     line-height: 1.05;
-
     margin-bottom: 45px;
 }
 
@@ -231,18 +208,14 @@ body {
 
 .texto-intro {
     max-width: 500px;
-
     font-size: 15px;
     line-height: 2;
-
     color: #999;
 }
 
-
-/* =====================================================
-   RECUERDOS
-===================================================== */
-
+/* ========================================
+   SECCIONES
+======================================== */
 .recuerdos {
     padding: 130px 6%;
 }
@@ -259,24 +232,16 @@ body {
     line-height: 1.05;
 }
 
-
-/* =====================================================
-   GALERÍA
-===================================================== */
-
+/* ========================================
+   GALERÍA Y FOTOGRAFÍAS
+======================================== */
 .galeria {
     max-width: 1100px;
     margin: auto;
-
     display: flex;
     flex-direction: column;
     gap: 130px;
 }
-
-
-/* =====================================================
-   FOTOS
-===================================================== */
 
 .foto {
     position: relative;
@@ -284,40 +249,22 @@ body {
 
 .foto-contenedor {
     position: relative;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 100%;
-
     overflow: visible;
 }
 
 .foto img:not(.hotwheel) {
     display: block;
-
     width: 100%;
     height: auto;
-
     object-fit: contain;
-
     background: #08090d;
-
     cursor: zoom-in;
-
-    transition:
-        transform 0.5s ease,
-        filter 0.5s ease;
+    transition: transform .5s ease, filter .5s ease;
 }
-
-
-/*
-   IMPORTANTE:
-   Las imágenes ahora mantienen
-   completamente su proporción.
-   No se recortan.
-*/
 
 .foto-grande img:not(.hotwheel) {
     max-width: 100%;
@@ -336,20 +283,13 @@ body {
 }
 
 .foto img:not(.hotwheel):hover {
-    transform: scale(1.01);
     filter: brightness(1.08);
 }
-
-
-/* =====================================================
-   INFORMACIÓN DE LAS FOTOS
-===================================================== */
 
 .foto-info {
     display: flex;
     align-items: flex-start;
     gap: 30px;
-
     margin-top: 25px;
 }
 
@@ -357,7 +297,6 @@ body {
     font-size: 9px;
     letter-spacing: 3px;
     color: #777;
-
     min-width: 100px;
 }
 
@@ -368,84 +307,49 @@ body {
     max-width: 400px;
 }
 
-
-/* =====================================================
-   HOT WHEELS
-===================================================== */
-
+/* ========================================
+   CARRITOS HOT WHEELS
+======================================== */
 .hotwheel {
     position: absolute;
-
     width: 90px;
     height: auto !important;
-
     z-index: 5;
-
     pointer-events: none;
-
-    filter:
-        drop-shadow(0 12px 10px rgba(0,0,0,0.7));
-
+    filter: drop-shadow(0 12px 10px rgba(0,0,0,.7));
     animation: carritoFlotando 4s ease-in-out infinite;
 }
-
-
-/* CARRO 1 */
 
 .hotwheel-1 {
     right: -35px;
     top: 8%;
-
     transform: rotate(8deg);
 }
-
-
-/* CARRO 2 */
 
 .hotwheel-2 {
     left: -35px;
     bottom: 8%;
-
     width: 80px;
-
     transform: rotate(-10deg);
-
     animation-delay: 1s;
 }
-
-
-/* CARRO 3 */
 
 .hotwheel-3 {
     right: -30px;
     bottom: 5%;
-
     width: 85px;
-
     transform: rotate(6deg);
-
     animation-delay: 2s;
 }
 
-
 @keyframes carritoFlotando {
-
-    0%,
-    100% {
-        margin-top: 0;
-    }
-
-    50% {
-        margin-top: -8px;
-    }
-
+    0%, 100% { margin-top: 0; }
+    50% { margin-top: -8px; }
 }
 
-
-/* =====================================================
+/* ========================================
    FRAGMENTOS
-===================================================== */
-
+======================================== */
 .fragmentos {
     padding: 180px 6%;
 }
@@ -453,19 +357,15 @@ body {
 .lista-recuerdos {
     max-width: 850px;
     margin: auto;
-
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255,255,255,.1);
 }
 
 .recuerdo {
     display: grid;
     grid-template-columns: 70px 1fr;
-
     gap: 30px;
-
     padding: 35px 0;
-
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,.1);
 }
 
 .recuerdo span {
@@ -480,11 +380,9 @@ body {
     font-size: 14px;
 }
 
-
-/* =====================================================
+/* ========================================
    CARTA
-===================================================== */
-
+======================================== */
 .carta-seccion {
     padding: 150px 20px;
 }
@@ -492,42 +390,33 @@ body {
 .carta {
     max-width: 760px;
     margin: auto;
-
     padding: 70px;
-
-    border: 1px solid rgba(255,255,255,0.08);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.025),
-            rgba(255,255,255,0.005)
-        );
+    border: 1px solid rgba(255,255,255,.08);
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,.025),
+        rgba(255,255,255,.005)
+    );
 }
 
 .carta h2 {
     font-family: "Playfair Display", serif;
     font-size: 55px;
     font-weight: 500;
-
     margin-bottom: 50px;
 }
 
 .texto-carta p {
     color: #aaa;
-
     font-size: 15px;
     line-height: 2;
-
     margin-bottom: 25px;
 }
 
 .firma {
     margin-top: 70px;
-
     display: flex;
     flex-direction: column;
-
     gap: 8px;
 }
 
@@ -540,24 +429,18 @@ body {
     font-family: "Playfair Display", serif;
     font-size: 25px;
     font-style: italic;
-
     color: #8e2946;
 }
 
-
-/* =====================================================
+/* ========================================
    FINAL
-===================================================== */
-
+======================================== */
 .final {
     min-height: 100vh;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-align: center;
-
     padding: 100px 20px;
 }
 
@@ -568,9 +451,7 @@ body {
 .final h2 {
     font-family: "Playfair Display", serif;
     font-size: clamp(50px, 8vw, 100px);
-
     font-weight: 500;
-
     margin-bottom: 35px;
 }
 
@@ -582,18 +463,14 @@ body {
 .final-linea {
     width: 80px;
     height: 1px;
-
     background: #8e2946;
-
     margin: 55px auto;
 }
 
 .final h3 {
     font-family: "Playfair Display", serif;
-
     font-size: 27px;
     line-height: 1.5;
-
     font-weight: 500;
 }
 
@@ -601,23 +478,17 @@ body {
     margin-top: 30px;
 }
 
-
-/* =====================================================
-   VISOR
-===================================================== */
-
+/* ========================================
+   VISOR DE FOTOS
+======================================== */
 .visor {
     position: fixed;
     inset: 0;
-
-    background: rgba(0,0,0,0.94);
-
+    background: rgba(0,0,0,.94);
     display: none;
     align-items: center;
     justify-content: center;
-
     padding: 40px;
-
     z-index: 1000;
 }
 
@@ -628,44 +499,169 @@ body {
 .visor img {
     max-width: 92vw;
     max-height: 90vh;
-
     width: auto;
     height: auto;
-
     object-fit: contain;
 }
 
 .cerrar-visor {
     position: absolute;
-
     top: 25px;
     right: 35px;
-
     border: none;
     background: transparent;
-
     color: white;
-
     font-size: 42px;
-
     cursor: pointer;
-
-    opacity: 0.7;
-
-    transition: 0.3s;
+    opacity: .7;
+    transition: .3s;
 }
 
 .cerrar-visor:hover {
     opacity: 1;
 }
 
+/* ========================================
+   VIDEO SORPRESA
+======================================== */
+.video-sorpresa {
+    padding: 130px 20px 160px;
+    text-align: center;
+    position: relative;
+}
 
-/* =====================================================
-   RESPONSIVE — CELULAR
-===================================================== */
+.video-sorpresa-contenido {
+    max-width: 850px;
+    margin: 0 auto;
+}
 
+.video-sorpresa h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(48px, 8vw, 88px);
+    font-weight: 500;
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.video-sorpresa h2 i {
+    color: #8e2946;
+}
+
+.video-descripcion,
+.ayuda-video {
+    color: #999;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.video-descripcion {
+    margin: 0 auto 35px;
+    max-width: 460px;
+}
+
+.boton-sorpresa {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px 25px;
+    border: 1px solid rgba(142,41,70,.8);
+    border-radius: 999px;
+    background: rgba(142,41,70,.12);
+    color: #f1f1f1;
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background .3s, transform .3s, border-color .3s;
+}
+
+.boton-sorpresa:hover {
+    background: rgba(142,41,70,.3);
+    border-color: #8e2946;
+    transform: translateY(-3px);
+}
+
+.icono-sorpresa {
+    color: #c86b87;
+    font-size: 12px;
+}
+
+.zona-video {
+    margin: 45px auto 0;
+    animation: aparecerVideo .6s ease both;
+}
+
+.zona-video[hidden] {
+    display: none;
+}
+
+.marco-video {
+    padding: 10px;
+    border: 1px solid rgba(142,41,70,.55);
+    border-radius: 16px;
+    background: linear-gradient(
+        145deg,
+        rgba(142,41,70,.13),
+        rgba(255,255,255,.015)
+    );
+    box-shadow: 0 25px 80px rgba(0,0,0,.35);
+    overflow: hidden;
+}
+
+.marco-video video {
+    display: block;
+    width: 100%;
+    max-height: 75vh;
+    border-radius: 9px;
+    background: #000;
+}
+
+.ayuda-video {
+    margin: 18px auto 0;
+    max-width: 600px;
+    font-size: 12px;
+}
+
+@keyframes aparecerVideo {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   ANIMACIÓN AL DESPLAZARSE
+======================================== */
+.introduccion,
+.recuerdos,
+.fragmentos,
+.carta-seccion,
+.final,
+.video-sorpresa {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.introduccion.visible,
+.recuerdos.visible,
+.fragmentos.visible,
+.carta-seccion.visible,
+.final.visible,
+.video-sorpresa.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================================
+   ADAPTACIÓN PARA CELULARES
+======================================== */
 @media (max-width: 700px) {
-
     .encabezado {
         top: 20px;
         left: 6%;
@@ -746,15 +742,25 @@ body {
         font-size: 22px;
     }
 
+    .video-sorpresa {
+        padding: 100px 18px 120px;
+    }
+
+    .marco-video {
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    .marco-video video {
+        border-radius: 6px;
+    }
+
+    .boton-sorpresa {
+        max-width: 100%;
+    }
 }
 
-
-/* =====================================================
-   CELULARES MUY PEQUEÑOS
-===================================================== */
-
 @media (max-width: 400px) {
-
     .inicio h1 {
         font-size: 65px;
     }
@@ -763,13 +769,8 @@ body {
         width: 100%;
     }
 
-    .titulo-seccion h2 {
-        font-size: 40px;
-    }
-
+    .titulo-seccion h2,
     .introduccion h2 {
         font-size: 40px;
     }
-
 }
-
